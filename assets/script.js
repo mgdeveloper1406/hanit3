@@ -1,8 +1,11 @@
-var slider = document.getElementById("range");
+// Peter's slider function
+// var slider = document.getElementById("range");
 
-slider.oninput = function () {
-  output.innerHTML = this.value;
-};
+// slider.oninput = function () {
+//   output.innerHTML = this.value;
+// };
+// Peter's slider function//
+
 
 // started with the quote API and date display
 var currentTimeEl = document.querySelector("#currentDay");
@@ -18,12 +21,14 @@ function quoteAPI() {
     .then(function (response) {
       var quote = response[numRandom];
       var div = document.createElement("div");
-      div.textContent = quote.text;
+      div.textContent = "💡  " + quote.text;
       inApiEl.append(div);
     });
 }
 quoteAPI();
-// finished with the quote API and date display
+// finished with the quote API and date display//
+
+// started with the achievement img API
 function imgAPI() {
   fetch(
     'https://api.giphy.com/v1/gifs/search?q=achievement&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=1'
@@ -40,3 +45,6 @@ function imgAPI() {
     })
 }
 imgAPI();
+// Finished with the achievement img API//
+
+

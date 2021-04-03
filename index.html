@@ -35,21 +35,21 @@
             <a class="nav-link" href="#save-act">Saved Activities</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#records">Records</a>
+            <a class="nav-link" href="records.html">Records</a>
           </li>
         </ul>
       </div>
     </nav>
-    <!-- navBar from Bootstrap, later can jump to section or click into other html -->
+    <!-- navBar from Bootstrap, later can jump to sections or click into records html -->
 
     <header class="container bg-light rounded text-center border mt-3 p-3">
       <p class="fs-2">Your daily inspirational Quote is:</p>
-      <div id="inApi" class="fs-1 mb-4"></div>
+      <div id="inApi" class="fs-1 mb-4 fw-bold"></div>
       <p id="currentDay" class="fs-3">Date</p>
     </header>
 
     <main class="container mt-3">
-      <section class="row border rounded p-3">
+      <section class="row border rounded p-3" id="add-act">
         <div class="col-6">
           <h2>Add Activity</h2>
           <p>Insert activity name and your effort on completing the activity</p>
@@ -62,7 +62,7 @@
             name="act-name"
             placeholder="What did you achieve today?"
           />
-          <!-- where they can score themselves -->
+          <!-- where they can score themselves using the slider-->
           <div class="d-flex flex-row justify-content-between mt-2">
             <div class="fs-4">0</div>
             <div class="fs-4">2</div>
@@ -106,22 +106,24 @@
           <p class="fs-5 text-uppercase mt-5 ">Good Job! You made it!</p>
         </div>
         <div class="col-5 p-1">
-          <span class="my-1 mx-auto mb-3 fs-2">Sum</span>
+          <span class="my-1 mx-auto mb-3 fs-2">💯💯Sum💯💯</span>
           <br>
           <span id="outApi"></span>
         </div>
         <button class="btn btn-primary my-1 p-2 mt-4 mx-auto fs-4">See activities Records for the past 30 days</button>
       </section>
     </main>
+
+    <!-- footer will contain the GitHub link to this project and each of our personal GitHub  -->
+    <!-- we will put our GitHub URL in the href="#!" section  -->
     <footer class="bg-secondary bg-gradient text-center text-white">
-      <!-- Grid container -->
       <div class="container p-3 pb-1">
         <section class="mb-2">
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a> GitHub
         </section>
       </div>
-      <div class="navbar-nav text-center flex-row p-3 d-flex justify-content-around bg-gradient" style="background-color: rgba(8, 8, 8, 0.582);">
-        <!-- © 2021 Created by: -->
+      <div class="navbar-nav text-center flex-row p-1 d-flex justify-content-around bg-gradient" style="background-color: rgba(8, 8, 8, 0.582);">
+        <li><p class="fs-4">Collaborators: </p></li>
         <li>
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>Lisa Murri</li>
         <li>
@@ -134,6 +136,7 @@
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>Spencer Henry </li>
       </div>
     </footer>
+    <!-- Finished with footer -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
