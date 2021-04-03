@@ -7,7 +7,8 @@ slider.oninput = function () {
 // started with the quote API and date display
 var currentTimeEl = document.querySelector("#currentDay");
 currentTimeEl.textContent = moment().format("dddd, MMMM Do YYYY");
-var responseContainerEl = document.querySelector("#api");
+var inApiEl = document.querySelector("#inApi");
+var outApiEL = document.querySelector("#outApi");
 var numRandom = Math.floor(Math.random() * 100);
 function quoteAPI() {
   fetch("https://type.fit/api/quotes")
@@ -18,8 +19,24 @@ function quoteAPI() {
       var quote = response[numRandom];
       var div = document.createElement("div");
       div.textContent = quote.text;
-      responseContainerEl.append(div);
+      inApiEl.append(div);
     });
 }
 quoteAPI();
 // finished with the quote API and date display
+function imgAPI() {
+  fetch(
+    'https://api.giphy.com/v1/gifs/search?q=achievement&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=1'
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (response) {
+      console.log(response)
+      outApiEL.innerHTML = '';
+      var gifImg = document.createElement('img');
+      gifImg.setAttribute('src', response.data[0].images.fixed_height.url);
+      outApiEL.appendChild(gifImg);
+    })
+}
+imgAPI();

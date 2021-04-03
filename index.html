@@ -32,7 +32,7 @@
             <a class="nav-link " href="#add-act">Add Activity</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="#save-act">Saved Activities</a>
+            <a class="nav-link" href="#save-act">Saved Activities</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#records">Records</a>
@@ -44,7 +44,7 @@
 
     <header class="container bg-light rounded text-center border mt-3 p-3">
       <p class="fs-2">Your daily inspirational Quote is:</p>
-      <div id="api" class="fs-1 mb-4"></div>
+      <div id="inApi" class="fs-1 mb-4"></div>
       <p id="currentDay" class="fs-3">Date</p>
     </header>
 
@@ -80,8 +80,8 @@
             value="0"
             id="range"
           />
-          <!-- button to submit the input -->
-          <button class="btn btn-primary my-1" id="save-act" type="submit">
+          <!-- button to add the input to the section below -->
+          <button class="btn btn-primary my-1 col-5 mx-auto" id="save-act" type="submit">
             Add Activity
           </button>
         </div>
@@ -89,15 +89,51 @@
 
       <section class="row border rounded p-3 mt-3">
         <h2 class="list-title">Activities of the day</h2>
-        <ul>
-          <div>
-            <!-- Get some javascript in here, find taskinator javaScript createTaskActions-->
-          </div>
-        </ul>
+        <div class="container p-2 mt-2 border rounded">
         <!-- where we display the submitted activities of the day -->
+          <ul>
+            <div>
+              <p>#Get some javascript in here, find taskinator javaScript createTaskActions</p>
+              <p>#something like createElement</p>
+            </div>
+          </ul>
+        </div>
+        <button class="col-3 btn btn-outline-primary mt-3 mx-auto">Save Activities</button>
+      </section>
+      <section class="row border rounded p-3 mt-4">
+        <div class="col-7">
+          <h2>Your total score for the day is : </h2>
+          <p class="fs-5 text-uppercase mt-5 ">Good Job! You made it!</p>
+        </div>
+        <div class="col-5 p-1">
+          <span class="my-1 mx-auto mb-3 fs-2">Sum</span>
+          <br>
+          <span id="outApi"></span>
+        </div>
+        <button class="btn btn-primary my-1 p-2 mt-4 mx-auto fs-4">See activities Records for the past 30 days</button>
       </section>
     </main>
-
+    <footer class="bg-secondary bg-gradient text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-3 pb-1">
+        <section class="mb-2">
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a> GitHub
+        </section>
+      </div>
+      <div class="navbar-nav text-center flex-row p-3 d-flex justify-content-around bg-gradient" style="background-color: rgba(8, 8, 8, 0.582);">
+        <!-- © 2021 Created by: -->
+        <li>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>Lisa Murri</li>
+        <li>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>Michelle Asuamah</li>
+        <li>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>Peter Wang</li>
+        <li>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>Raven Wong</li>
+        <li>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>Spencer Henry </li>
+      </div>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
