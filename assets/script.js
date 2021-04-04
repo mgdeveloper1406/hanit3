@@ -58,9 +58,9 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 // finished scrolling to top button function//
+

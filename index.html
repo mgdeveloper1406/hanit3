@@ -60,7 +60,7 @@
           <!-- where we ask the user to input their activities -->
           <input
             type="text"
-            class="form-control my-1"
+            class="form-control my-1 font-monospace"
             name="act-name"
             placeholder="What did you achieve today?"
           />
@@ -91,9 +91,25 @@
 
       <section class="row border rounded p-3 mt-3">
         <h2 class="list-title">Activities of the day</h2>
-        <div class="container p-2 mt-2 border rounded">
+        <div class="container p-2 mt-2 border border-secondary rounded font-monospace">
         <!-- where we display the submitted activities of the day -->
-          <ul>
+          <ul class="list-group fs-6">
+            <li class="list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center">
+              <span class="">`Activity input`</span>
+              <span class="">Score(text.content = `the score` + "/10")</span>
+              <button class="btn btn-outline-danger btn-sm">Delete</button>
+            </li>
+            <li class="list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center">
+              <span class="">`Activity input`</span>
+              <span class="">Score(text.content = `the score` + "/10")</span>
+              <button class="btn btn-outline-danger btn-sm">Delete</button>
+            </li>
+            <li class="list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center">
+              <span class="">`Activity input`</span>
+              <span class="">Score(text.content = `the score` + "/10")</span>
+              <button class="btn btn-outline-danger btn-sm">Delete</button>
+            </li>
+
             <div>
               <p>#Get some javascript in here, find taskinator javaScript createTaskActions</p>
               <p>#something like createElement</p>
@@ -126,7 +142,7 @@
         </section>
       </div>
       <div class="navbar-nav text-center flex-row p-1 d-flex justify-content-around bg-gradient" style="background-color: rgba(8, 8, 8, 0.582);">
-        <li><p class="fs-4">Collaborators: </p></li>
+        <li><p class="fs-4">Collaborators:</p></li>
         <li>
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>Lisa Murri</li>
         <li>
@@ -148,6 +164,7 @@
     ></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
     <script src="assets/script.js"></script>
   </body>
 </html>
