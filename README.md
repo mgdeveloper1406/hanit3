@@ -2,7 +2,7 @@
 
 ## Description 
 Habit Tracker is a way to hold yourself accountable for good habits every day. In the book The Power of Habit, Charles Duhigg says that each habit has a cue, routine, and a reward. 
-Good habits like exercising, eating healthy, and reading are hard to keep because there is no short-term reward. 
+Good habits like exercising, eating healthy, and reading are hard to keep because there is no short-term reward, or there is no cue, so we forget to do them. 
 However, with Habit Tracker, the score that you give yourself on these activities could be the reward, and checking the app could be the cue. You decide what the routine is. By scoring yourself, you get the satisfaction of knowing that you are on the path to achieving your goals. 
 If you are incentivized to do healthy habits every day, you will become succesful.
 A daily habit can be done to varying degrees of success, which is why you can give yourself a score out of 10. Let's use excerise as an example.
