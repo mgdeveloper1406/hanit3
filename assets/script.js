@@ -28,6 +28,18 @@ function quoteAPI() {
 quoteAPI();
 // finished with the quote API and date display//
 
+// Adding an activity to roster
+var ButtonEl = document.querySelector("#save-activity");
+var activitiesEl = document.querySelector("#activity-list");
+
+ButtonEl.addEventListener("click", function() {
+  var activityItemEl = document.createElement("li");
+  activityItemEl.className = "list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center";
+  activityItemEl.textContent = "New activity";
+  activitiesEl.appendChild(activityItemEl);
+});
+
+
 // started with the achievement img API
 function imgAPI() {
   fetch(

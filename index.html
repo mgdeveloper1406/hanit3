@@ -60,6 +60,7 @@
           <!-- where we ask the user to input their activities -->
           <input
             type="text"
+            id="activity-input"
             class="form-control my-1 font-monospace"
             name="act-name"
             placeholder="What did you achieve today?"
@@ -83,7 +84,7 @@
             id="range"
           />
           <!-- button to add the input to the section below -->
-          <button class="btn btn-primary my-1 col-5 mx-auto" id="save-act" type="submit">
+          <button class="btn btn-primary my-1 col-5 mx-auto" id="save-activity" type="submit">
             Add Activity
           </button>
         </div>
@@ -93,7 +94,7 @@
         <h2 class="list-title">Activities of the day</h2>
         <div class="container p-2 mt-2 border border-secondary rounded font-monospace">
         <!-- where we display the submitted activities of the day -->
-          <ul class="list-group fs-6"> 
+          <ul class="list-group fs-6" id="activity-list"> 
             <!-- This is the className to apply while making the createElement for the input list so it looks nice -->
             <li class="list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center">
               <span class="">`Activity input`</span>
@@ -114,7 +115,7 @@
               <p>#Get some javascript in here, find taskinator javaScript createTaskActions</p>
               <p>#something like createElement</p>
 
-          <!-- This is the className to apply while making the createElement for the input list so it looks nice -->
+          
           </ul>
         </div>
         <button class="col-3 btn btn-outline-primary mt-3 mx-auto">Save Activities</button>
