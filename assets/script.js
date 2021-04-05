@@ -1,12 +1,3 @@
-// Peter's slider function
-// var slider = document.getElementById("range");
-
-// slider.oninput = function () {
-//   output.innerHTML = this.value;
-// };
-// Peter's slider function//
-
-
 // started with the quote API and date display
 var currentTimeEl = document.querySelector("#currentDay");
 currentTimeEl.textContent = moment().format("dddd, MMMM Do YYYY");
