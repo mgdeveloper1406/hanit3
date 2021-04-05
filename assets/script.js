@@ -40,8 +40,6 @@ ButtonEl.addEventListener("click", function() {
 });
 
 
-
-
 // started with the achievement img API
 function imgAPI() {
   fetch(
