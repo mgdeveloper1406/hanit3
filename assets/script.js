@@ -35,9 +35,12 @@ var activitiesEl = document.querySelector("#activity-list");
 var createActivity = function(event) {
   event.preventDefault();
 
+  var activityNameInput = document.querySelector("input[name='act-name']").value;
+  
+
   var activityItemEl = document.createElement("li");
   activityItemEl.className = "list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center";
-  activityItemEl.textContent = "New activity";
+  activityItemEl.textContent = activityNameInput;
   activitiesEl.appendChild(activityItemEl);
 };
 
