@@ -20,15 +20,43 @@ quoteAPI();
 // finished with the quote API and date display//
 
 // Adding an activity to roster
-var ButtonEl = document.querySelector("#save-act");
+var ButtonEl = document.querySelector("#save-activity");
 var activitiesEl = document.querySelector("#activity-list");
 
-ButtonEl.addEventListener("click", function() {
+
+var createActivity = function(event) {
+  event.preventDefault();
+
+  var activityNameInput = document.querySelector("input[name='act-name']").value;
+  var activityScore = document.getElementById("range").value;
+  
+
   var activityItemEl = document.createElement("li");
-  activityItemEl.className = "list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center";
-  activityItemEl.textContent = "New activity";
+  var deleteEl = document.createElement("button");
+  deleteEl.className = "btn btn-outline-danger btn-sm"
+  activityItemEl.appendChild(deleteEl);
+  activityItemEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center";
+  activityItemEl.textContent = `${activityNameInput} felt like a ${activityScore}/10 today`;
   activitiesEl.appendChild(activityItemEl);
-});
+  activityScore.className = "activity-score";
+};
+
+formEl.addEventListener("submit", createActivity);
+
+// this doesn't work :(
+
+// var saveBtn = document.getElementById("save-activities")
+
+// function computeScore() {
+//   var allScores = document.querySelectorAll("#activity-score");
+//   scoresArray = Array.from(allScores);
+//   console.log(scoresArray);
+// }
+
+// saveBtn.addEventListener("click", computeScore);
+
+
+
 
 // #e.g for delete button (<button class="btn btn-outline-danger btn-sm"></button>)
 

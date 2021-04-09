@@ -51,8 +51,8 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <main class="container mt-3">
-      <section class="row border rounded p-3" id="add-act">
-        <div class="col-6">
+      <form class="row border rounded p-3" id="add-act">
+        <div id="activity-form" class="col-6">
           <h2>Add Activity</h2>
           <p>Insert activity name and your effort on completing the activity</p>
         </div>
@@ -84,11 +84,13 @@
             id="range"
           />
           <!-- button to add the input to the section below -->
-          <button class="btn btn-primary my-1 col-5 mx-auto" id="save-act" type="submit">
-            Add Activity
-          </button>
+          <div id="activity-group">
+            <button class="btn btn-primary my-1 col-5 mx-auto" id="save-activity" type="submit">
+              Add Activity
+            </button>
+          </div>  
         </div>
-      </section>
+      </form>
 
       <section class="row border rounded p-3 mt-3">
         <h2 class="list-title">Activities of the day</h2>
@@ -101,24 +103,10 @@
               <span class="">Score(text.content = `the score` + "/10")</span>
               <button class="btn btn-outline-danger btn-sm">Delete</button>
             </li>
-            <li class="list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center">
-              <span class="">`Activity input`</span>
-              <span class="">Score(text.content = `the score` + "/10")</span>
-              <button class="btn btn-outline-danger btn-sm">Delete</button>
-            </li>
-            <li class="list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center">
-              <span class="">`Activity input`</span>
-              <span class="">Score(text.content = `the score` + "/10")</span>
-              <button class="btn btn-outline-danger btn-sm">Delete</button>
-            </li>
-
-              <p>#Get some javascript in here, find taskinator javaScript createTaskActions</p>
-              <p>#something like createElement</p>
-
           
           </ul>
         </div>
-        <button class="col-3 btn btn-outline-primary mt-3 mx-auto">Save Activities</button>
+        <button class="col-3 btn btn-outline-primary mt-3 mx-auto" id="save-activities">Save Activities</button>
       </section>
       <section class="row border rounded p-3 mt-4">
         <div class="col-7">
@@ -127,7 +115,7 @@
           <p class="fs-5 text-uppercase">We are so proud of your achievement!</p>
         </div>
         <div class="col-5 p-1">
-          <span class="my-1 mx-auto mb-3 fs-2">💯💯Sum💯💯</span>
+          <span class="my-1 mx-auto mb-3 fs-2" id="score">💯💯Sum💯💯</span>
           <br>
           <span id="outApi"></span>
         </div>
