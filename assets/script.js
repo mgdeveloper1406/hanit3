@@ -20,7 +20,7 @@ quoteAPI();
 // finished with the quote API and date display//
 
 // Adding an activity to roster
-var ButtonEl = document.querySelector("#save-activity");
+var ButtonEl = document.querySelector("#save-act");
 var activitiesEl = document.querySelector("#activity-list");
 
 ButtonEl.addEventListener("click", function() {
@@ -29,6 +29,8 @@ ButtonEl.addEventListener("click", function() {
   activityItemEl.textContent = "New activity";
   activitiesEl.appendChild(activityItemEl);
 });
+
+// #e.g for delete button (<button class="btn btn-outline-danger btn-sm"></button>)
 
 
 // started with the achievement img API
