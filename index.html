@@ -51,8 +51,8 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <main class="container mt-3">
-      <section class="row border rounded p-3" id="add-act">
-        <div class="col-6">
+      <form class="row border rounded p-3" id="add-act">
+        <div id="activity-form" class="col-6">
           <h2>Add Activity</h2>
           <p>Insert activity name and your effort on completing the activity</p>
         </div>
@@ -84,11 +84,13 @@
             id="range"
           />
           <!-- button to add the input to the section below -->
-          <button class="btn btn-primary my-1 col-5 mx-auto" id="save-activity" type="submit">
-            Add Activity
-          </button>
+          <div id="activity-group">
+            <button class="btn btn-primary my-1 col-5 mx-auto" id="save-activity" type="submit">
+              Add Activity
+            </button>
+          </div>  
         </div>
-      </section>
+      </form>
 
       <section class="row border rounded p-3 mt-3">
         <h2 class="list-title">Activities of the day</h2>

@@ -29,15 +29,24 @@ quoteAPI();
 // finished with the quote API and date display//
 
 // Adding an activity to roster
-var ButtonEl = document.querySelector("#save-activity");
+var formEl = document.querySelector("#add-act");
 var activitiesEl = document.querySelector("#activity-list");
 
-ButtonEl.addEventListener("click", function() {
+var createActivity = function(event) {
+  event.preventDefault();
+
+  var activityNameInput = document.querySelector("input[name='act-name']").value;
+  
+
   var activityItemEl = document.createElement("li");
   activityItemEl.className = "list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center";
-  activityItemEl.textContent = "New activity";
+  activityItemEl.textContent = activityNameInput;
   activitiesEl.appendChild(activityItemEl);
-});
+};
+
+formEl.addEventListener("submit", createActivity);
+
+
 
 
 // started with the achievement img API
