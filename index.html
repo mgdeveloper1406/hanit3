@@ -32,7 +32,7 @@
             <a class="nav-link " href="#add-act">Add Activity</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#save-act">Save Activities</a>
+            <a class="nav-link" href="#activity-list">Save Activities</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="records.html">Records</a>
@@ -97,13 +97,7 @@
         <div class="container p-2 mt-2 border border-secondary rounded font-monospace">
         <!-- where we display the submitted activities of the day -->
           <ul class="list-group fs-6" id="activity-list"> 
-            <!-- This is the className to apply while making the createElement for the input list so it looks nice -->
-            <li class="list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center actHolder">
-              <span class="eachInput">`Activity input`</span>
-              <span class="eachScore">Score(text.content = `the score` + "/10")</span>
-              <button class="btn btn-outline-danger btn-sm deleteBtn">Delete</button>
-            </li>
-          
+
           </ul>
         </div>
         <button class="col-3 btn btn-outline-primary mt-3 mx-auto" id="save-activities">Save Activities</button>
@@ -115,9 +109,9 @@
           <p class="fs-5 text-uppercase">We are so proud of your achievement!</p>
         </div>
         <div class="col-5 p-1">
-          <span class="my-1 mx-auto mb-3 fs-2" id="score">💯💯Sum💯💯</span>
+          <span class="my-1 mx-auto mb-3 fs-2 d-flex justify-content-center" id="scoreSum"></span>
           <br>
-          <span id="outApi"></span>
+          <span class="d-flex justify-content-center" id="outApi"></span>
         </div>
         <button class="btn btn-primary my-1 p-2 mt-4 mx-auto fs-4">See activities Records for the past 30 days</button>
       </section>

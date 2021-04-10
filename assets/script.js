@@ -22,7 +22,8 @@ quoteAPI();
 // Adding an activity to roster
 var formEl = document.querySelector("#add-act");
 var activitiesEl = document.querySelector("#activity-list");
-
+var saveBtn = document.getElementById("save-activities")
+var scoresArray = []; 
 
 var createActivity = function(event) {
   event.preventDefault();
@@ -36,39 +37,38 @@ var createActivity = function(event) {
   actHolderEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center";
 
 // first container for input 
-  var eachInputEl = document.getElementById("eachInput");
-  eachInputEl = document.createElement("span");
+  var eachInputEl = document.createElement("span");
   eachInputEl.textContent = activityNameInput;
   actHolderEl.appendChild(eachInputEl)
 // second container for scores 
-  var eachScoreEl = document.getElementById("eachScore");
-  eachScoreEl = document.createElement("span");
+  var eachScoreEl = document.createElement("span");
   eachScoreEl.textContent = activityScore + " / 10";
   actHolderEl.appendChild(eachScoreEl);
 // delete button 
-  var deleteBtnEl = document.getElementById("deleteBtn");
-  deleteBtnEl = document.createElement("button");
+  var deleteBtnEl = document.createElement("button");
   deleteBtnEl.className = "btn btn-outline-danger btn-sm"
   deleteBtnEl.textContent = "Delete";
   actHolderEl.appendChild(deleteBtnEl);
 
   // add the holder back to the activitiesEl
   activitiesEl.appendChild(actHolderEl);
+
+  // using an array to store each of the score, I think it would be easier when we try to delete a score 
+  scoresArray.push(activityScore)
+
 };
 
 formEl.addEventListener("submit", createActivity);
+// formEl is selected to #add-act, when user click submit, the createActivity function will be called 
 
-// this doesn't work :(
+function computeScore() {
+  var ScoreSumEl = document.getElementById("scoreSum")
+  ScoreSumEl.textContent = scoresArray.reduceRight(function(a,b){return parseInt(a)+parseInt(b);});
+  // translate the string in the array into int, add them together and assign them back to #scoreSum section
+}
 
-// var saveBtn = document.getElementById("save-activities")
-
-// function computeScore() {
-//   var allScores = document.querySelectorAll("#activity-score");
-//   scoresArray = Array.from(allScores);
-//   console.log(scoresArray);
-// }
-
-// saveBtn.addEventListener("click", computeScore);
+saveBtn.addEventListener("click", computeScore);
+// saveBtn is selected to #add-act, when the user clicks save activities, the function computeScore will be called
 
 
 
