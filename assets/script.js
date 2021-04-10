@@ -20,25 +20,40 @@ quoteAPI();
 // finished with the quote API and date display//
 
 // Adding an activity to roster
-var ButtonEl = document.querySelector("#save-activity");
+var formEl = document.querySelector("#add-act");
 var activitiesEl = document.querySelector("#activity-list");
 
 
 var createActivity = function(event) {
   event.preventDefault();
-
+// get user input 
   var activityNameInput = document.querySelector("input[name='act-name']").value;
   var activityScore = document.getElementById("range").value;
-  
 
-  var activityItemEl = document.createElement("li");
-  var deleteEl = document.createElement("button");
-  deleteEl.className = "btn btn-outline-danger btn-sm"
-  activityItemEl.appendChild(deleteEl);
-  activityItemEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center";
-  activityItemEl.textContent = `${activityNameInput} felt like a ${activityScore}/10 today`;
-  activitiesEl.appendChild(activityItemEl);
-  activityScore.className = "activity-score";
+// outer layer holder 
+  var actHolderEl = document.getElementById("actHolder");
+  actHolderEl = document.createElement("li");
+  actHolderEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center";
+
+// first container for input 
+  var eachInputEl = document.getElementById("eachInput");
+  eachInputEl = document.createElement("span");
+  eachInputEl.textContent = activityNameInput;
+  actHolderEl.appendChild(eachInputEl)
+// second container for scores 
+  var eachScoreEl = document.getElementById("eachScore");
+  eachScoreEl = document.createElement("span");
+  eachScoreEl.textContent = activityScore + " / 10";
+  actHolderEl.appendChild(eachScoreEl);
+// delete button 
+  var deleteBtnEl = document.getElementById("deleteBtn");
+  deleteBtnEl = document.createElement("button");
+  deleteBtnEl.className = "btn btn-outline-danger btn-sm"
+  deleteBtnEl.textContent = "Delete";
+  actHolderEl.appendChild(deleteBtnEl);
+
+  // add the holder back to the activitiesEl
+  activitiesEl.appendChild(actHolderEl);
 };
 
 formEl.addEventListener("submit", createActivity);
@@ -57,8 +72,6 @@ formEl.addEventListener("submit", createActivity);
 
 
 
-
-// #e.g for delete button (<button class="btn btn-outline-danger btn-sm"></button>)
 
 
 // started with the achievement img API
