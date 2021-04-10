@@ -31,12 +31,30 @@ recordsDisplay.innerHTML = savedRecords.map(record => {
   if (record.saveScore > 50) {
     return `                
     <div class="card border-success m-3 " style="max-width: 18rem;">
-    <div class="card-header">${record.saveDate}</div>
-    <div class="card-body text-success">
+      <div class="card-header">${record.saveDate}</div>
+        <div class="card-body text-success">
+            <h5 class="card-title">${record.saveScore}</h5>
+            <p class="card-text">What a successful day
+            !</p>
+        </div>
+    </div>`
+  } else if (record.saveScore >= 30 && record.saveScore <= 50) {
+    return `                
+    <div class="card border-primary m-3" style="max-width: 18rem;">
+      <div class="card-header">${record.saveDate}</div>
+        <div class="card-body text-primary">
+          <h5 class="card-title">${record.saveScore}</h5>
+          <p class="card-text">There's room for improvement.</p>
+        </div>
+    </div>`
+  } else if (record.saveScore < 30) {
+    return `                
+    <div class="card border-danger m-3" style="max-width: 18rem;">
+      <div class="card-header">${record.saveDate}</div>
+        <div class="card-body text-danger">
         <h5 class="card-title">${record.saveScore}</h5>
-        <p class="card-text">What a succesful day
-        !</p>
-    </div>
+        <p class="card-text">You can definitely do better!</p>
+      </div>
     </div>`
   }
 }).join("")

@@ -69,7 +69,7 @@ function computeScore() {
   ScoreSumEl.textContent = finalScore
   // translate the string in the array into int, add them together and assign them back to #scoreSum section
   localStorage.setItem("dailyScore", finalScore);
-  localStorage.setItem("date", moment().format("MMM Do YY"));
+  localStorage.setItem("date", moment().format("MMM Do YYYY"));
 }
 
 saveBtn.addEventListener("click", computeScore);
