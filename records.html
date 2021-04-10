@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="assets/style.css" />
     <title>Habit Tracker Records</title>
   </head>
-  <body>
+  <body onload="displayRecords()">
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container">
           <h1 class="page-title">Habit Tracker</h1>
@@ -52,7 +52,7 @@
     The indiviual card contains: "card border-*thecolor mb-3" style="max-width: 18rem;" > "card-body text-*thecolor" > "card-title" and "card-text" 
     I am assuming it might involve a conditional statement like- for score..something something if (score >= 50){thecolor == "sucess"} else if (score < 50 && score > 30) {thecolor == "primary"} else {thecolor == "danger"} -->
         <main>
-            <section class="container bg-light rounded text-center border mt-3 p-3 d-flex justify-content-around flex-wrap">
+            <section class="container bg-light rounded text-center border mt-3 p-3 d-flex justify-content-around flex-wrap" id="records-display">
                 <!--This part below can be deleted after coding the get item from local storage, this is just for display purpose -->
                 <div class="card border-success m-3 " style="max-width: 18rem;">
                     <div class="card-header">Date</div>
@@ -204,5 +204,6 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="assets\script.js"></script>
+        <script src="assets/records.js"></script>
   </body>
 </html>
