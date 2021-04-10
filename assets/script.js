@@ -66,7 +66,7 @@ formEl.addEventListener("submit", createActivity);
 function computeScore() {
   var ScoreSumEl = document.getElementById("scoreSum")
   var finalScore = scoresArray.reduceRight(function(a,b){return parseInt(a)+parseInt(b);});
-  ScoreSumEl.textContent = finalScore
+  ScoreSumEl.textContent = Math.round((finalScore / scoresArray.length * 10)) + '%'
   // translate the string in the array into int, add them together and assign them back to #scoreSum section
 
   //When score is computed save the date and score to local storage
