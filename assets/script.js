@@ -56,7 +56,10 @@ var createActivity = function(event) {
   activitiesEl.appendChild(actHolderEl);
 
   // using an array to store each of the score, I think it would be easier when we try to delete a score 
-  scoresArray.push(activityScore)
+  scoresArray.push(activityScore);
+
+  //Clear input after it is added to task list
+  document.querySelector("input[name='act-name']").value="";
 
 };
 
