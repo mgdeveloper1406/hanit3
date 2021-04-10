@@ -26,10 +26,14 @@ var saveBtn = document.getElementById("save-activities")
 var scoresArray = []; 
 
 var createActivity = function(event) {
+
   event.preventDefault();
 // get user input 
   var activityNameInput = document.querySelector("input[name='act-name']").value;
   var activityScore = document.getElementById("range").value;
+  var alert = document.querySelector("#alert")
+
+  if (activityNameInput) {
 
 // outer layer holder 
   var actHolderEl = document.getElementById("actHolder");
@@ -58,9 +62,13 @@ var createActivity = function(event) {
   // using an array to store each of the score, I think it would be easier when we try to delete a score 
   scoresArray.push(activityScore);
 
+  alert.setAttribute("class", "hidden")
+
   //Clear input after it is added to task list
   document.querySelector("input[name='act-name']").value="";
-
+  } else {
+    alert.removeAttribute("class", "hidden")
+  }
 };
 
 formEl.addEventListener("submit", createActivity);

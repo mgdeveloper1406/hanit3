@@ -16,3 +16,7 @@
 #myBtn:hover {
   background-color: rgba(0, 68, 255, 0.959);
 }
+
+.hidden {
+  display: none;
+}
