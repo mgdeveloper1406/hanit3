@@ -34,14 +34,16 @@ var createActivity = function(event) {
 // outer layer holder 
   var actHolderEl = document.getElementById("actHolder");
   actHolderEl = document.createElement("li");
-  actHolderEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center";
+  actHolderEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center ";
 
 // first container for input 
   var eachInputEl = document.createElement("span");
   eachInputEl.textContent = activityNameInput;
+  // something to fix is: so the sentence is too long, the word is covering the score section =[
   actHolderEl.appendChild(eachInputEl)
 // second container for scores 
   var eachScoreEl = document.createElement("span");
+  eachScoreEl.className = "position-absolute top-50 start-50 translate-middle";
   eachScoreEl.textContent = activityScore + " / 10";
   actHolderEl.appendChild(eachScoreEl);
 // delete button 
