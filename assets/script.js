@@ -24,16 +24,21 @@ var formEl = document.querySelector("#add-act");
 var activitiesEl = document.querySelector("#activity-list");
 var saveBtn = document.getElementById("save-activities")
 var scoresArray = []; 
+var scoreCardContainerEl = document.getElementById("scoreCardContainer");
 
 var createActivity = function(event) {
   event.preventDefault();
 // get user input 
   var activityNameInput = document.querySelector("input[name='act-name']").value;
   var activityScore = document.getElementById("range").value;
+  if (!activityNameInput) {
+    alert("You need to fill out the activity!");
+    return false;
+  }
+  // in case where user did not input, alert the user
 
 // outer layer holder 
-  var actHolderEl = document.getElementById("actHolder");
-  actHolderEl = document.createElement("li");
+  var actHolderEl = document.createElement("li");
   actHolderEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center ";
 
 // first container for input 
@@ -57,22 +62,55 @@ var createActivity = function(event) {
 
   // using an array to store each of the score, I think it would be easier when we try to delete a score 
   scoresArray.push(activityScore)
-
+  formEl.reset();
+  // empty the input area after submitting
 };
 
-formEl.addEventListener("submit", createActivity);
-// formEl is selected to #add-act, when user click submit, the createActivity function will be called 
+
+var createScoreCard = function(event) {
+  event.preventDefault();
+  var scoreCardHolderEl = document.createElement("div");
+  scoreCardHolderEl.className = "card border-success m-3";
+  scoreCardHolderEl.style = "max-width: 18rem;";
+  // card holder 
+
+  var scoreCardHeaderEl = document.createElement("div");
+  scoreCardHeaderEl.className = "card-header";
+  scoreCardHeaderEl.textContent = currentTimeEl;
+  scoreCardHolderEl.appendChild(scoreCardHeaderEl);
+  // put card header in holder 
+
+  var scoreCardBodyEl = document.createElement("div");
+  scoreCardBodyEl.className = "card-body text-primary";
+
+  var scoreCardScoreEl = document.createElement("h5");
+  scoreCardScoreEl.className = "card-title";
+  scoreCardScoreEl.textContent = scoreSumEl;
+  scoreCardBodyEl.appendChild(scoreCardScoreEl);
+  // put card score in card body 
+
+  scoreCardHolderEl.appendChild(scoreCardBodyEl)
+  // put card body in holder 
+  scoreCardContainerEl.appendChild(scoreCardHolderEl)
+  // put holder back in container that points to scoreCardContainer id in the HTML
+}
 
 function computeScore() {
-  var ScoreSumEl = document.getElementById("scoreSum")
-  ScoreSumEl.textContent = scoresArray.reduceRight(function(a,b){return parseInt(a)+parseInt(b);});
+  var scoreSumEl = document.getElementById("scoreSum")
+  scoreSumEl.textContent = scoresArray.reduceRight(function(a,b){return parseInt(a)+parseInt(b);});
+  ScoreSumEl.textContent = finalScore
   // translate the string in the array into int, add them together and assign them back to #scoreSum section
 }
 
+localStorage.setItem("dailyScore", finalScore);
+localStorage.setItem("date", moment().format("MMM Do YYYY"));
+
+formEl.addEventListener("submit", createActivity);
+// formEl is selected to #add-act, when user click submit, the createActivity function will be called 
+saveBtn.addEventListener("click", createScoreCard);
+// create a score card when the user click the save activities button 
 saveBtn.addEventListener("click", computeScore);
 // saveBtn is selected to #add-act, when the user clicks save activities, the function computeScore will be called
-
-
 
 
 
