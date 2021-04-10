@@ -61,9 +61,11 @@ var createActivity = function(event) {
   activitiesEl.appendChild(actHolderEl);
 
   // using an array to store each of the score, I think it would be easier when we try to delete a score 
-  scoresArray.push(activityScore)
-  formEl.reset();
-  // empty the input area after submitting
+  scoresArray.push(activityScore);
+
+  //Clear input after it is added to task list
+  document.querySelector("input[name='act-name']").value="";
+
 };
 
 
@@ -100,6 +102,8 @@ function computeScore() {
   scoreSumEl.textContent = scoresArray.reduceRight(function(a,b){return parseInt(a)+parseInt(b);});
   ScoreSumEl.textContent = finalScore
   // translate the string in the array into int, add them together and assign them back to #scoreSum section
+  localStorage.setItem("dailyScore", finalScore);
+  localStorage.setItem("date", moment().format("MMM Do YYYY"));
 }
 
 localStorage.setItem("dailyScore", finalScore);
@@ -111,7 +115,6 @@ saveBtn.addEventListener("click", createScoreCard);
 // create a score card when the user click the save activities button 
 saveBtn.addEventListener("click", computeScore);
 // saveBtn is selected to #add-act, when the user clicks save activities, the function computeScore will be called
-
 
 
 // started with the achievement img API

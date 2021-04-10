@@ -35,7 +35,7 @@
             <a class="nav-link" href="#activity-list">Save Activities</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="records.html">Records</a>
+            <a class="nav-link" href="records.html" type="click">Records</a>
           </li>
         </ul>
       </div>
@@ -100,7 +100,7 @@
 
           </ul>
         </div>
-        <button class="col-3 btn btn-outline-primary mt-3 mx-auto" id="save-activities">Save Activities</button>
+        <button class="col-3 btn btn-outline-primary mt-3 mx-auto" id="save-activities" onclick="savingRecords(event)">Save Activities</button>
       </section>
       <section class="row border rounded p-3 mt-4">
         <div class="col-7">
@@ -113,7 +113,7 @@
           <br>
           <span class="d-flex justify-content-center" id="outApi"></span>
         </div>
-        <button onclick="window.location.href='records.html'" class="btn btn-primary my-1 p-2 mt-4 mx-auto fs-4">See activities Records for the past 30 days</button>
+        <button onclick="window.location.href='records.html'" class="btn btn-primary my-1 p-2 mt-4 mx-auto fs-4" type="click">See activities Records for the past 30 days</button>
       </section>
     </main>
 
@@ -150,5 +150,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <script src="assets/script.js"></script>
+    <script src="assets/records.js"></script>
   </body>
 </html>
