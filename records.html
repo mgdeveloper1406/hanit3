@@ -48,38 +48,10 @@
         <p id="currentDay" class="fs-3">Date</p>
     </header>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
-    <!-- This part would be done using javaScript to get data from local storage, and posting it into the record html by assignment data into these card structures, these are the examples bootstrap classes needed to be assign to the className after document.createElement, please reach out to the TA if you need help to sort these out. 
-    The indiviual card contains: "card border-*thecolor mb-3" style="max-width: 18rem;" > "card-body text-*thecolor" > "card-title" and "card-text" 
-    I am assuming it might involve a conditional statement like- for score..something something if (score >= 50){thecolor == "sucess"} else if (score < 50 && score > 30) {thecolor == "primary"} else {thecolor == "danger"} -->
+
         <main>
           <section class="container bg-light rounded text-center border mt-3 p-3 d-flex justify-content-around flex-wrap scoreCardContainer" id="records-display">
-                <!--This part below can be deleted after coding the get item from local storage, this is just for display purpose -->
-                <div class="card border-success m-3 " style="max-width: 18rem;">
-                    <div class="card-header">Date</div>
-                    <div class="card-body text-success">
-                        <h5 class="card-title">Score</h5>
-                        <p class="card-text">If the score is over 50, use blue border.#border-success</p>
-                    </div>
-                </div>
-
-                <div class="card border-primary m-3" style="max-width: 18rem;">
-                    <div class="card-header">Date</div>
-                    <div class="card-body text-primary">
-                    <h5 class="card-title">Score</h5>
-                    <p class="card-text">If the score is between 30-50, use blue border.#border-primary</p>
-                    </div>
-                </div>
-                <div class="card border-danger m-3" style="max-width: 18rem;">
-                    <div class="card-header">Date</div>
-                    <div class="card-body text-danger">
-                    <h5 class="card-title">Score</h5>
-                    <p class="card-text">If the score is under 30, use red border #border-danger.</p>
-                    </div>
-                </div>
-
-                <!-- This part above can be deleted after coding the get item from local storage, this is just for display purpose -->
-
-            </section>
+          </section>
         </main>
 
 

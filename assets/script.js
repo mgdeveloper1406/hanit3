@@ -4,6 +4,9 @@ currentTimeEl.textContent = moment().format("dddd, MMMM Do YYYY");
 var inApiEl = document.querySelector("#inApi");
 var outApiEL = document.querySelector("#outApi");
 var numRandom = Math.floor(Math.random() * 100);
+var actId = 0;
+
+
 function quoteAPI() {
   fetch("https://type.fit/api/quotes")
     .then(function (response) {
@@ -39,12 +42,16 @@ var createActivity = function(event) {
 // outer layer holder 
   var actHolderEl = document.createElement("li");
   actHolderEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center ";
+  actHolderEl.setAttribute = ("activity-Id", actId);
+  // giving each actHolderEl a attribute 
+  console.log(actId);
+
 
 // first container for input 
   var eachInputEl = document.createElement("span");
   eachInputEl.textContent = activityNameInput;
   // something to fix is: so the sentence is too long, the word is covering the score section =[
-  actHolderEl.appendChild(eachInputEl)
+  actHolderEl.appendChild(eachInputEl);
 // second container for scores 
   var eachScoreEl = document.createElement("span");
   eachScoreEl.className = "position-absolute top-50 start-50 translate-middle";
@@ -54,12 +61,13 @@ var createActivity = function(event) {
   var deleteBtnEl = document.createElement("button");
   deleteBtnEl.className = "btn btn-outline-danger btn-sm"
   deleteBtnEl.textContent = "Delete";
+  deleteBtnEl.onclick = deleteAct();
   actHolderEl.appendChild(deleteBtnEl);
 
   // add the holder back to the activitiesEl
   activitiesEl.appendChild(actHolderEl);
 
-  // using an array to store each of the score, I think it would be easier when we try to delete a score 
+  // using an array to store each of the score
   scoresArray.push(activityScore);
 
   alert.setAttribute("class", "hidden")
@@ -69,36 +77,14 @@ var createActivity = function(event) {
   } else {
     alert.removeAttribute("class", "hidden")
   }
+  actId ++ ;
 };
 
+var deleteAct = function (actId) {
 
-var createScoreCard = function(event) {
-  event.preventDefault();
-  var scoreCardHolderEl = document.createElement("div");
-  scoreCardHolderEl.className = "card border-success m-3";
-  scoreCardHolderEl.style = "max-width: 18rem;";
-  // card holder 
+};
+// need some work on this 
 
-  var scoreCardHeaderEl = document.createElement("div");
-  scoreCardHeaderEl.className = "card-header";
-  scoreCardHeaderEl.textContent = currentTimeEl;
-  scoreCardHolderEl.appendChild(scoreCardHeaderEl);
-  // put card header in holder 
-
-  var scoreCardBodyEl = document.createElement("div");
-  scoreCardBodyEl.className = "card-body text-primary";
-
-  var scoreCardScoreEl = document.createElement("h5");
-  scoreCardScoreEl.className = "card-title";
-  scoreCardScoreEl.textContent = scoreSumEl;
-  scoreCardBodyEl.appendChild(scoreCardScoreEl);
-  // put card score in card body 
-
-  scoreCardHolderEl.appendChild(scoreCardBodyEl)
-  // put card body in holder 
-  scoreCardContainerEl.appendChild(scoreCardHolderEl)
-  // put holder back in container that points to scoreCardContainer id in the HTML
-}
 
 
 function computeScore() {
@@ -108,17 +94,18 @@ function computeScore() {
   // translate the string in the array into int, add them together and assign them back to #scoreSum section
   localStorage.setItem("dailyScore", finalScore);
   localStorage.setItem("date", moment().format("MMM Do YYYY"));
-  var displayAct = document.querySelector("#display-act")
-  while (displayAct.firstChild) {
-    displayAct.removeChild(displayAct.firstChild);
-  };
+
+  
+  // var displayAct = document.querySelector("#display-act")
+  // while (displayAct.firstChild) {
+  //   displayAct.removeChild(displayAct.firstChild);
+  // };
 }
 
 
 formEl.addEventListener("submit", createActivity);
 // formEl is selected to #add-act, when user click submit, the createActivity function will be called 
-saveBtn.addEventListener("click", createScoreCard);
-// create a score card when the user click the save activities button 
+
 saveBtn.addEventListener("click", computeScore);
 // saveBtn is selected to #add-act, when the user clicks save activities, the function computeScore will be called
 
