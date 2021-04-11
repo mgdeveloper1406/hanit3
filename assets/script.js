@@ -27,15 +27,14 @@ var scoresArray = [];
 var scoreCardContainerEl = document.querySelector("scoreCardContainer");
 
 var createActivity = function(event) {
+
   event.preventDefault();
 // get user input 
   var activityNameInput = document.querySelector("input[name='act-name']").value;
   var activityScore = document.getElementById("range").value;
-  if (!activityNameInput) {
-    alert("You need to fill out the activity!");
-    return false;
-  }
-  // in case where user did not input, alert the user
+  var alert = document.querySelector("#alert")
+
+  if (activityNameInput) {
 
 // outer layer holder 
   var actHolderEl = document.createElement("li");
@@ -63,9 +62,13 @@ var createActivity = function(event) {
   // using an array to store each of the score, I think it would be easier when we try to delete a score 
   scoresArray.push(activityScore);
 
+  alert.setAttribute("class", "hidden")
+
   //Clear input after it is added to task list
   document.querySelector("input[name='act-name']").value="";
-
+  } else {
+    alert.removeAttribute("class", "hidden")
+  }
 };
 
 
@@ -97,16 +100,20 @@ var createScoreCard = function(event) {
   // put holder back in container that points to scoreCardContainer id in the HTML
 }
 
+
 function computeScore() {
-  var scoreSumEl = document.getElementById("scoreSum")
-  scoreSumEl.textContent = scoresArray.reduceRight(function(a,b){return parseInt(a)+parseInt(b);});
+  var ScoreSumEl = document.getElementById("scoreSum")
+  var finalScore = scoresArray.reduceRight(function(a,b){return parseInt(a)+parseInt(b);});
   ScoreSumEl.textContent = finalScore
   // translate the string in the array into int, add them together and assign them back to #scoreSum section
-
+  localStorage.setItem("dailyScore", finalScore);
+  localStorage.setItem("date", moment().format("MMM Do YYYY"));
+  var displayAct = document.querySelector("#display-act")
+  while (displayAct.firstChild) {
+    displayAct.removeChild(displayAct.firstChild);
+  };
 }
 
-localStorage.setItem("dailyScore", finalScore);
-localStorage.setItem("date", moment().format("MMM Do YYYY"));
 
 formEl.addEventListener("submit", createActivity);
 // formEl is selected to #add-act, when user click submit, the createActivity function will be called 
