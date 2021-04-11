@@ -97,10 +97,10 @@ function computeScore() {
   // translate the string in the array into int, add them together and assign them back to #scoreSum section
   localStorage.setItem("dailyScore", finalScore);
   localStorage.setItem("date", moment().format("MMM Do YYYY"));
-  var displayAct = document.querySelector("#display-act")
-  while (displayAct.firstChild) {
-    displayAct.removeChild(displayAct.firstChild);
-  };
+  //var displayAct = document.querySelector("#display-act")
+  //while (displayAct.firstChild) {
+    //displayAct.removeChild(displayAct.firstChild);
+  //};
 }
 
 saveBtn.addEventListener("click", computeScore);
