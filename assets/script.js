@@ -24,7 +24,7 @@ var formEl = document.querySelector("#add-act");
 var activitiesEl = document.querySelector("#activity-list");
 var saveBtn = document.getElementById("save-activities")
 var scoresArray = []; 
-var scoreCardContainerEl = document.getElementById("scoreCardContainer");
+var scoreCardContainerEl = document.querySelector("scoreCardContainer");
 
 var createActivity = function(event) {
   event.preventDefault();
@@ -102,8 +102,7 @@ function computeScore() {
   scoreSumEl.textContent = scoresArray.reduceRight(function(a,b){return parseInt(a)+parseInt(b);});
   ScoreSumEl.textContent = finalScore
   // translate the string in the array into int, add them together and assign them back to #scoreSum section
-  localStorage.setItem("dailyScore", finalScore);
-  localStorage.setItem("date", moment().format("MMM Do YYYY"));
+
 }
 
 localStorage.setItem("dailyScore", finalScore);
