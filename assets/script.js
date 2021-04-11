@@ -24,6 +24,7 @@ var formEl = document.querySelector("#add-act");
 var activitiesEl = document.querySelector("#activity-list");
 var saveBtn = document.getElementById("save-activities")
 var scoresArray = []; 
+var scoreIdCounter = 0; //Try
 
 var createActivity = function(event) {
 
@@ -39,6 +40,7 @@ var createActivity = function(event) {
   var actHolderEl = document.getElementById("actHolder");
   actHolderEl = document.createElement("li");
   actHolderEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center ";
+  actHolderEl.setAttribute("data-act-id", scoreIdCounter);  //Try
 
 // first container for input 
   var eachInputEl = document.createElement("span");
@@ -56,17 +58,31 @@ var createActivity = function(event) {
   deleteBtnEl.textContent = "Delete";
   actHolderEl.appendChild(deleteBtnEl);
 
+    deleteBtnEl.addEventListener("click", function () {
+    console.log(this);
+    console.log(this.parentElement);
+    var parent = this.parentElement;
+    parent.parentElement.removeChild(parent);
+    var scoreIndex = parent.getAttribute("data-act-id")
+    scoresArray.splice(scoreIndex, 1);
+
+  });
+ 
   // add the holder back to the activitiesEl
   activitiesEl.appendChild(actHolderEl);
 
+  scoreIdCounter++; //Try
+
   // using an array to store each of the score, I think it would be easier when we try to delete a score 
   scoresArray.push(activityScore);
-
+  
+  //Remove alert if activity is entered
   alert.setAttribute("class", "hidden")
 
   //Clear input after it is added to task list
   document.querySelector("input[name='act-name']").value="";
   } else {
+    //Show alert if input is empty
     alert.removeAttribute("class", "hidden")
   }
 };
