@@ -19,8 +19,8 @@ An inspirational quote is displayed on the header, to be further motivate the us
 https://peterw712.github.io/habit-tracker/
 
 ## Contributors
-Raven Wong
-Michelle Asuamah
-Spencer Henry
-Peter Wang
-Lisa R
+Raven Wong\
+Michelle Asuamah\
+Spencer Henry\
+Peter Wang\
+Lisa R\
