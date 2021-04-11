@@ -15,7 +15,7 @@ savingRecords = event => {
   
   var scoreRecords = {
     saveDate: localStorage.getItem("date"),
-    saveScore: localStorage.getItem("dailyScore")
+    saveScore: localStorage.getItem("dailyScore"),
   };
 
   savedRecords.push(scoreRecords);

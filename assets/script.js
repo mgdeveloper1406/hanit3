@@ -25,6 +25,7 @@ var activitiesEl = document.querySelector("#activity-list");
 var saveBtn = document.getElementById("save-activities")
 var scoresArray = []; 
 var scoreIdCounter = 0; //Try
+var actArray = [];
 
 var createActivity = function(event) {
 
@@ -67,6 +68,8 @@ var createActivity = function(event) {
     scoresArray.splice(scoreIndex, 1);
 
   });
+
+
  
   // add the holder back to the activitiesEl
   activitiesEl.appendChild(actHolderEl);
@@ -85,6 +88,9 @@ var createActivity = function(event) {
     //Show alert if input is empty
     alert.removeAttribute("class", "hidden")
   }
+  actArray.push(actHolderEl)
+  console.log(actHolderEl)
+  console.log(actArray) 
 };
 
 formEl.addEventListener("submit", createActivity);
@@ -102,7 +108,6 @@ function computeScore() {
     //displayAct.removeChild(displayAct.firstChild);
   //};
 }
-
 saveBtn.addEventListener("click", computeScore);
 // saveBtn is selected to #add-act, when the user clicks save activities, the function computeScore will be called
 
@@ -142,4 +147,3 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 // finished scrolling to top button function//
-
