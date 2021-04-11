@@ -11,3 +11,16 @@ The key to keeping a habit is doing at least a little bit every day.
 
 ## Usage
 An inspirational quote is displayed on the header, to be further motivate the user. In the add activity box, the user can enter what habit they want to keep track of that day, a description for what they did, and how they rate themselves on that habit. When they click add activity, then the activity is added to the roster of activities for the day. When they click save activities, then the daily score is displayed and saved to local storage. When the user clicks "see records for the past 30 days" they are taken to a page displaying all the daily scores for the past 30 days.
+
+## Screenshot
+![screenshot](assets/screenshot.png)
+
+## Deployed application
+https://peterw712.github.io/habit-tracker/
+
+## Contributors
+Raven Wong\
+Michelle Asuamah\
+Spencer Henry\
+Peter Wang\
+Lisa R
