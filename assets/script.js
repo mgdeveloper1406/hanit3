@@ -78,6 +78,7 @@ var createActivity = function(event) {
     alert.removeAttribute("class", "hidden")
   }
   actId ++ ;
+
 };
 
 var deleteAct = function (actId) {
@@ -95,7 +96,7 @@ function computeScore() {
   localStorage.setItem("dailyScore", finalScore);
   localStorage.setItem("date", moment().format("MMM Do YYYY"));
 
-  
+
   // var displayAct = document.querySelector("#display-act")
   // while (displayAct.firstChild) {
   //   displayAct.removeChild(displayAct.firstChild);
