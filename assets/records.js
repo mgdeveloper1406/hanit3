@@ -11,15 +11,24 @@ savingRecords = event => {
 
   event.preventDefault()
 
-  //When score is computed save the date and score to local storage
+  //When score is computed save the date and score to an object
   
   var scoreRecords = {
     saveDate: localStorage.getItem("date"),
     saveScore: localStorage.getItem("dailyScore")
   };
 
-  savedRecords.push(scoreRecords);
+  //If date does not already exists push to local storage (save activities once a day)
 
+  if (
+  savedRecords.findIndex(function (savedDate) {
+    return savedDate.saveDate === moment().format("MMM Do YYYY");
+  })
+  === -1) {
+    savedRecords.push(scoreRecords);
+  }
+
+  //The records page will only display up to 30 Days
   savedRecords.splice(30);
 
   localStorage.setItem("savedRecords", JSON.stringify(savedRecords))

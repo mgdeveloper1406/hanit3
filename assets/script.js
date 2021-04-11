@@ -24,7 +24,7 @@ var formEl = document.querySelector("#add-act");
 var activitiesEl = document.querySelector("#activity-list");
 var saveBtn = document.getElementById("save-activities")
 var scoresArray = []; 
-var scoreIdCounter = 0; //Try
+var scoreIdCounter = 0; 
 
 var createActivity = function(event) {
 
@@ -40,7 +40,7 @@ var createActivity = function(event) {
   var actHolderEl = document.getElementById("actHolder");
   actHolderEl = document.createElement("li");
   actHolderEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center ";
-  actHolderEl.setAttribute("data-act-id", scoreIdCounter);  //Try
+  actHolderEl.setAttribute("data-act-id", scoreIdCounter);  //Give unique Id to each activity
 
 // first container for input 
   var eachInputEl = document.createElement("span");
@@ -71,7 +71,8 @@ var createActivity = function(event) {
   // add the holder back to the activitiesEl
   activitiesEl.appendChild(actHolderEl);
 
-  scoreIdCounter++; //Try
+  //Counter to give unique Id to each activity 
+  scoreIdCounter++; 
 
   // using an array to store each of the score, I think it would be easier when we try to delete a score 
   scoresArray.push(activityScore);
