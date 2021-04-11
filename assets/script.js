@@ -103,6 +103,9 @@ function computeScore() {
   //};
 }
 
+
+
+
 saveBtn.addEventListener("click", computeScore);
 // saveBtn is selected to #add-act, when the user clicks save activities, the function computeScore will be called
 
