@@ -19,12 +19,13 @@ function quoteAPI() {
 quoteAPI();
 // finished with the quote API and date display//
 
+
 // Adding an activity to roster
 var formEl = document.querySelector("#add-act");
 var activitiesEl = document.querySelector("#activity-list");
 var saveBtn = document.getElementById("save-activities")
 var scoresArray = []; 
-var scoreIdCounter = 0; //Try
+var scoreIdCounter = 0; 
 var actArray = [];
 
 var createActivity = function(event) {
@@ -35,13 +36,11 @@ var createActivity = function(event) {
   var activityScore = document.getElementById("range").value;
   var alert = document.querySelector("#alert")
 
-  if (activityNameInput) {
-
-// outer layer holder 
+  // outer layer holder 
   var actHolderEl = document.getElementById("actHolder");
   actHolderEl = document.createElement("li");
   actHolderEl.className = "activity list-group-item list-group-item-primary rounded p-2 m-2 d-flex justify-content-between d-flex align-items-center ";
-  actHolderEl.setAttribute("data-act-id", scoreIdCounter);  //Try
+  actHolderEl.setAttribute("data-act-id", scoreIdCounter);  //Give unique Id to each activity
 
 // first container for input 
   var eachInputEl = document.createElement("span");
@@ -69,12 +68,21 @@ var createActivity = function(event) {
 
   });
 
-
+  if (activityNameInput) {
+    var taskDataObj = {
+      name: activityNameInput ,
+      score: activityScore,
+      id: scoreIdCounter,
+    };
+    actArray.push(taskDataObj);
+    // window.localStorage.setItem("activityData", JSON.stringify(actArray));
+ 
  
   // add the holder back to the activitiesEl
   activitiesEl.appendChild(actHolderEl);
 
-  scoreIdCounter++; //Try
+  //Counter to give unique Id to each activity 
+  scoreIdCounter++; 
 
   // using an array to store each of the score, I think it would be easier when we try to delete a score 
   scoresArray.push(activityScore);
@@ -84,13 +92,18 @@ var createActivity = function(event) {
 
   //Clear input after it is added to task list
   document.querySelector("input[name='act-name']").value="";
-  } else {
-    //Show alert if input is empty
-    alert.removeAttribute("class", "hidden")
-  }
-  actArray.push(actHolderEl)
+
+  //
+
+  //actArray.push(actHolderEl)
   console.log(actHolderEl)
   console.log(actArray) 
+
+} else {
+  //Show alert if input is empty
+  alert.removeAttribute("class", "hidden")
+}
+saveTasks();
 };
 
 formEl.addEventListener("submit", createActivity);
@@ -101,13 +114,39 @@ function computeScore() {
   var finalScore = scoresArray.reduceRight(function(a,b){return parseInt(a)+parseInt(b);});
   ScoreSumEl.textContent = finalScore
   // translate the string in the array into int, add them together and assign them back to #scoreSum section
-  localStorage.setItem("dailyScore", finalScore);
-  localStorage.setItem("date", moment().format("MMM Do YYYY"));
+  window.localStorage.setItem("dailyScore", finalScore);
+  window.localStorage.setItem("date", moment().format("MMM Do YYYY"));
   //var displayAct = document.querySelector("#display-act")
   //while (displayAct.firstChild) {
     //displayAct.removeChild(displayAct.firstChild);
   //};
+
 }
+
+var saveTasks = function() {
+  localStorage.setItem("actArray", JSON.stringify(actArray));
+  alert("hi")
+}
+var loadAct =  function(){
+  var savedActs = localStorage.getItem("actArray");
+  
+
+  if (!savedActs) {
+    return false;
+  }
+  // parse into array of objects
+  alert("Saved tasks found!");
+
+
+  savedActs = JSON.parse(savedActs)
+
+  for (var i = 0; i < savedActs.length; i++) {
+    createActivity(savedArray[i]);
+  }
+};
+ 
+
+
 saveBtn.addEventListener("click", computeScore);
 // saveBtn is selected to #add-act, when the user clicks save activities, the function computeScore will be called
 
@@ -147,3 +186,4 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 // finished scrolling to top button function//
+loadAct();
