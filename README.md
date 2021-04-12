@@ -29,17 +29,18 @@ WHEN I click on "see records for the past 30 days"\
 THEN I am taken to another page which displays color-coded scores for the past 30 days
 
 ## Technologies used
-HTML
-CSS
-Javascript
-jQuery
-Bootstrap
-Moment.js
-type.fit API
+HTML\
+CSS\
+Javascript\
+jQuery\
+Bootstrap\
+Moment.js\
+type.fit API\
 giphy API
 
 ## Future developements
-Make user input persist after refresh
+- Make user input persist after refresh
+- Find API with more quotes, make sure it doesn't change with refresh
 
 ## Screenshot
 ![screenshot](assets/screenshot.png)
