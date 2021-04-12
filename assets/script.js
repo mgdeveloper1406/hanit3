@@ -29,12 +29,13 @@ var scoreIdCounter = 0;
 var actArray = [];
 
 var createActivity = function(event) {
-
   event.preventDefault();
 // get user input 
   var activityNameInput = document.querySelector("input[name='act-name']").value;
   var activityScore = document.getElementById("range").value;
-  var alert = document.querySelector("#alert")
+  var alert = document.querySelector("#alert");
+
+  
 
   // outer layer holder 
   var actHolderEl = document.getElementById("actHolder");
@@ -103,6 +104,8 @@ var createActivity = function(event) {
   //Show alert if input is empty
   alert.removeAttribute("class", "hidden")
 }
+
+  
 saveTasks();
 };
 
@@ -125,24 +128,27 @@ function computeScore() {
 
 var saveTasks = function() {
   localStorage.setItem("actArray", JSON.stringify(actArray));
-  alert("hi")
 }
 var loadAct =  function(){
-  var savedActs = localStorage.getItem("actArray");
   
-
+  var savedActs = localStorage.getItem("actArray");
   if (!savedActs) {
     return false;
   }
-  // parse into array of objects
-  alert("Saved tasks found!");
+  savedActs = JSON.parse(savedActs);
 
-
-  savedActs = JSON.parse(savedActs)
-
+  
   for (var i = 0; i < savedActs.length; i++) {
-    createActivity(savedArray[i]);
+    let savedItm = savedActs[i]
+    actArray.push(savedItm);
+
+    
+    //createActivity(savedArray[i]);
+
+    
+  
   }
+
 };
  
 
