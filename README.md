@@ -29,13 +29,13 @@ WHEN I click on "see records for the past 30 days"\
 THEN I am taken to another page which displays color-coded scores for the past 30 days
 
 ## Technologies used
-HTML
-CSS
-Javascript
-jQuery
-Bootstrap
-Moment.js
-type.fit API
+HTML\
+CSS\
+Javascript\
+jQuery\
+Bootstrap\
+Moment.js\
+type.fit API\
 giphy API
 
 ## Future developements
