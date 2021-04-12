@@ -39,7 +39,8 @@ type.fit API\
 giphy API
 
 ## Future developements
-Make user input persist after refresh
+- Make user input persist after refresh
+- Find API with more quotes, make sure it doesn't change with refresh
 
 ## Screenshot
 ![screenshot](assets/screenshot.png)
