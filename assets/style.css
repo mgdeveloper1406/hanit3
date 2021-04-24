@@ -20,3 +20,19 @@
 .hidden {
   display: none;
 }
+
+.hero {
+  background-image: url(https://images.pexels.com/photos/2649403/pexels-photo-2649403.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-2649403.jpg&fm=jpg);
+  background-position: center;
+  background-size: cover;
+  top: 10;
+  left: 0;
+  background-color: rgb(250, 246, 246);
+  opacity: 0.8;
+  color: #000;
+}
+
+#currentDay {
+  color: aliceblue;
+  font-weight: bolder;
+}

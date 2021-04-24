@@ -42,7 +42,7 @@
     </nav>
     <!-- navBar from Bootstrap, later can jump to sections or click into records html -->
 
-    <header class="container bg-light rounded text-center border mt-3 p-3">
+    <header class="container bg-light rounded text-center border mt-3 p-3 hero">
       <p class="fs-2">Your daily inspirational Quote is:</p>
       <div id="inApi" class="fs-1 mb-4 fw-bold"></div>
       <p id="currentDay" class="fs-3">Date</p>
@@ -90,7 +90,7 @@
           />
           <!-- button to add the input to the section below -->
           <div id="activity-group">
-            <button class="btn btn-primary my-1 col-5 mx-auto" id="save-activity" type="submit">
+            <button class="btn btn-primary my-1 col-md-5 mx-auto" id="save-activity" type="submit">
               Add Activity
             </button>
           </div>  
@@ -108,12 +108,12 @@
         <button class="col-3 btn btn-outline-primary mt-3 mx-auto" id="save-activities" onclick="savingRecords(event)">Save Activities</button>
       </section>
       <section class="row border rounded p-3 mt-4">
-        <div class="col-7">
+        <div class="col-md-7">
           <h2>Your total score for the day is : </h2>
           <p class="fs-5 text-uppercase mt-3 ">Good Job! You made it!</p>
           <p class="fs-5 text-uppercase">We are so proud of your achievement!</p>
         </div>
-        <div class="col-5 p-1">
+        <div class="col-md-5 p-1">
           <span class="my-1 mx-auto mb-3 fs-2 d-flex justify-content-center" id="scoreSum"></span>
           <br>
           <span class="d-flex justify-content-center" id="outApi"></span>
